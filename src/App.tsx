@@ -3,6 +3,9 @@ import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 import Menu from './components/Menu';
 import Page from './pages/Page';
+import Login from './pages/Login';  // login
+import Home from './components/home/Home';
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -44,10 +47,16 @@ const App: React.FC = () => {
           <Menu />
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
-              <Redirect to="/folder/Inbox" />
+              <Redirect to="/home" />  {/* Redirige al home */}
+            </Route>
+            <Route path="/home" exact={true}>
+              <Home />  {/* Carga la página de inicio */}
+            </Route>
+            <Route path="/login" exact={true}>
+              <Login />  {/* Carga la página de login */}
             </Route>
             <Route path="/folder/:name" exact={true}>
-              <Page />
+              <Page />  {/* Carga la página de contenido según la ruta */}
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
@@ -55,5 +64,6 @@ const App: React.FC = () => {
     </IonApp>
   );
 };
+
 
 export default App;
