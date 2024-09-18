@@ -6,7 +6,7 @@ interface SignUpState {
   password: string;
 }
 
-const SignUpForm: React.FC = () => {
+const SignUp: React.FC = () => {
   const [state, setState] = useState<SignUpState>({
     name: '',
     email: '',
@@ -73,10 +73,10 @@ const SignUpForm: React.FC = () => {
           onChange={handleChange}
           placeholder="Password"
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit">Registrar</button>
       </form>
     </div>
   );
 };
 
-export default SignUpForm;
+export default SignUp;

@@ -1,3 +1,4 @@
+ /* @import "~@fortawesome/fontawesome-free/css/all.min.css"; */
 
   
   @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
@@ -232,6 +233,13 @@
     margin: 0 5px;
     height: 40px;
     width: 40px;
+    background-color: #fff; /* Fondo blanco para los círculos */
+    color: #ff4b2b; /* Color rojo para los iconos */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+  }
+
+  .social-container i {
+    font-size: 20px; /* Tamaño del icono */
   }
   
   footer {
