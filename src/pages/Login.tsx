@@ -1,62 +1,47 @@
-import React, { useState } from 'react';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonInput, IonButton, IonItem, IonLabel, IonText } from '@ionic/react';
+import React, { useState } from "react";
+import "./Login.css";
+import SignInForm from "./SignIn";
+import SignUpForm  from "./SignUp";
+       
 
-const Login: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+export default function App() {
+  const [type, setType] = useState("signIn");
 
-  const handleLogin = () => {
-    // Aquí puedes manejar el inicio de sesión
-    console.log("Email:", email);
-    console.log("Password:", password);
+  const handleOnClick = (text:string) => {
+    if (text !== type) {
+      setType(text);
+      return;
+    }
   };
 
+  const containerClass = "container " + (type === "signUp" ? "right-panel-active" : "");
+
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Login</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-        <IonContent className="ion-padding" style={{ textAlign: 'center', marginTop: '1rem' }}>
-        <p>Bienvenido a la página de inicio de sesión</p>
-  
-        {/* Campo para el usuario/correo */}
-        <IonItem>
-          <IonLabel position="stacked">Usuario o Correo</IonLabel>
-          <IonInput 
-            type="email"
-            value={email}
-            onIonChange={(e: { detail: { value: React.SetStateAction<string>; }; }) => setEmail(e.detail.value!)} 
-            placeholder="Ingresa tu correo" 
-          />
-        </IonItem>
-
-        {/* Campo para la contraseña */}
-        <IonItem>
-          <IonLabel position="stacked">Contraseña</IonLabel>
-          <IonInput 
-            type="password"
-            value={password}
-            onIonChange={(e: { detail: { value: React.SetStateAction<string>; }; }) => setPassword(e.detail.value!)} 
-            placeholder="Ingresa tu contraseña" 
-          />
-        </IonItem>
-
-        {/* Botón de iniciar sesión */}
-        <IonButton expand="block" onClick={handleLogin}>
-          Iniciar Sesión
-        </IonButton>
-
-        {/* Texto para recuperar contraseña */}
-        <IonText color="primary">
-          <p style={{ textAlign: 'center', marginTop: '1rem' }}>
-            <a href="#">¿Olvidaste tu contraseña?</a>
-          </p>
-        </IonText>
-      </IonContent>
-    </IonPage>
+    <div className="App">
+      <h2>Bienvenidos a Choice</h2> {/* Título */}
+      <div className={containerClass} id="container">
+        <SignUpForm />
+        <SignInForm />
+        <div className="overlay-container">
+          <div className="overlay">
+            <div className="overlay-panel overlay-left">
+              <img src="user-image.png" alt="User" className="user-image" /> {/* Imagen del usuario */}
+              <h1>Welcome Back!</h1>
+              <p>To keep connected with us please login with your personal info</p>
+              <button className="ghost" id="signIn" onClick={() => handleOnClick("signIn")}>
+                Sign In
+              </button>
+            </div>
+            <div className="overlay-panel overlay-right">
+              <h1>Hello, Friend!</h1>
+              <p>Enter your personal details and start journey with us</p>
+              <button className="ghost" id="signUp" onClick={() => handleOnClick("signUp")}>
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-};
-
-export default Login;
+}

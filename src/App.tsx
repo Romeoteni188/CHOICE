@@ -5,6 +5,9 @@ import Menu from './components/Menu';
 import Page from './pages/Page';
 import Login from './pages/Login';  // login
 import Home from './components/home/Home';
+import Calendar from './components/calendar/Calendar'
+import Map from './components/map/Map';
+import Register from './components/register/Register';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -46,17 +49,23 @@ const App: React.FC = () => {
         <IonSplitPane contentId="main">
           <Menu />
           <IonRouterOutlet id="main">
-            <Route path="/" exact={true}>
-              <Redirect to="/home" />  {/* Redirige al home */}
+            <Route path="/home" exact={true}>
+              <Home />  {"/home"}
             </Route>
             <Route path="/home" exact={true}>
-              <Home />  {/* Carga la página de inicio */}
+              <Home />  {"/home"}
             </Route>
             <Route path="/login" exact={true}>
-              <Login />  {/* Carga la página de login */}
+              <Login />  {"/login"}
             </Route>
-            <Route path="/folder/:name" exact={true}>
-              <Page />  {/* Carga la página de contenido según la ruta */}
+            <Route path="/register" exact={true}>
+              <Register />  {"/register"} exact={true}
+            </Route>
+            <Route path="/calendar" exact={true}>
+               <Calendar/> {"/calendar"}
+            </Route>
+            <Route path={"/map"} exact={true}> 
+             <Map/>{"/map"}
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
