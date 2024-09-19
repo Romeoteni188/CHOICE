@@ -53,10 +53,12 @@ ion-menu.md ion-item.selected ion-icon {
 }
 
 ion-menu.md ion-item ion-icon {
-  color: #616e7e;
+  /* color: #616e7e; */
+  color: #eeeff1;
 }
 
 ion-menu.md ion-item ion-label {
+  /* font-weight: 500; */
   font-weight: 500;
 }
 
@@ -81,7 +83,8 @@ ion-menu.ios ion-item {
 
 ion-menu.ios ion-item ion-icon {
   font-size: 24px;
-  color: #73849a;
+  /* color: #73849a; */
+  color: #eef0f3;
 }
 
 ion-menu.ios ion-item .selected ion-icon {

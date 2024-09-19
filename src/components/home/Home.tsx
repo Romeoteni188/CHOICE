@@ -39,9 +39,9 @@ const Home: React.FC = () => {
 
         {/* Imágenes */}
         <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
-          <img src="/assets/images1.jpeg" alt="Comunidades rurales" style={{ maxWidth: '100%', height: 'auto', marginBottom: '20px' }} />
+          <img src="/assets/images1.jpg" alt="Comunidades rurales" style={{ maxWidth: '100%', height: 'auto', marginBottom: '20px' }} />
           <img src="/assets/images3.jpg" alt="Voluntarios trabajando" style={{ maxWidth: '100%', height: 'auto', marginBottom: '20px' }} />
-          <img src="/assets/images2.jpeg" alt="Voluntarios trabajando" style={{ maxWidth: '100%', height: 'auto', marginBottom: '20px' }} />
+          <img src="/assets/images2.jpg" alt="Voluntarios trabajando" style={{ maxWidth: '100%', height: 'auto', marginBottom: '20px' }} />
         </div>
 
         {/* Formulario */}

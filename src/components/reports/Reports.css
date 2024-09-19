@@ -1,0 +1,24 @@
+/* Estilos para el componente Reporters */
+.reporter-card {
+    margin: 10px;
+  }
+  
+  .reporter-card .ion-card-header {
+    background-color: #3880ff;
+    color: white;
+  }
+  
+  .reporter-card .ion-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .reporter-card .ion-card-content {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .reporter-card .chart-container {
+    margin-top: 20px;
+  }
+  

@@ -8,6 +8,7 @@ import Home from './components/home/Home';
 import Calendar from './components/calendar/Calendar'
 import Map from './components/map/Map';
 import Register from './components/register/Register';
+import Reports from './components/reports/Reports';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -66,6 +67,9 @@ const App: React.FC = () => {
             </Route>
             <Route path={"/map"} exact={true}> 
              <Map/>{"/map"}
+            </Route>
+            <Route path={"/reports"} exact={true}> 
+             <Map/>{"/reports"}
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
