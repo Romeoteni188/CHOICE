@@ -1,0 +1,18 @@
+# Ignorar carpetas de dependencias y archivos de construcción
+node_modules/
+dist/
+build/
+
+# Ignorar configuraciones específicas o de pruebas
+*.config.js
+*.config.ts
+*.test.ts
+*.spec.ts
+
+# Ignorar directorios estáticos o de terceros
+public/
+schemas/
+
+# Ignorar el caché de Cypress
+cypress/screenshots/
+cypress/videos/
